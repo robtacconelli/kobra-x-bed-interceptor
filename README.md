@@ -52,6 +52,8 @@ If you replicate this and use a smaller/cheaper board, **add input protection**:
 
 UNO R4 works just fine as it is without any additional component.
 
+Once wired, the UNO R4 fits on top of RFID reader (near the power-supply enclosure), there's just enough space to keep it in place. Technically no enclousure needed.
+
 ## Wiring
 
 The Kobra X PSU board (TDX-026) has a 5-pin connector linking to the mainboard, labeled:
