@@ -144,9 +144,9 @@ If the bed can't reach setpoint, increase `DAMPING_FACTOR` to 0.6–0.7. If it o
 
 ## Files
 
-- `src/bed_interceptor/bed_interceptor.ino` — the Arduino sketch
+- `bed_interceptor.ino` — the Arduino sketch
 - `images/` — scope traces and hardware photos documenting the project
-- `docs/` — additional documentation
+- `docs/` — additional documentation when ready
 
 ## Caveats
 
