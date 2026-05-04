@@ -1,3 +1,5 @@
+# HIGHLY-EXPERIMENTAL - DO AT YOUR OWN RISK
+
 # Anycubic Kobra X — Bed Interceptor
 
 An Arduino-based device that throttles the Anycubic Kobra X's heated bed control signal, converting its rapid pulse-width firing into infrequent, longer bang-bang cycles. The result is a much gentler load profile on the power supply, the triac, and the upstream AC source — at the cost of slightly slower warmup and a small steady-state temperature ripple.
