@@ -4,7 +4,7 @@ An Arduino-based device that throttles the Anycubic Kobra X's heated bed control
 
 ## Why this exists
 
-The Kobra X's heated bed is a **1000 W mains-voltage silicone pad** controlled by the mainboard via a triac driver. To deliver fractional power smoothly, the firmware uses **proportional pulse-width firing**: short trigger pulses every ~80 ms, with pulse widths ranging from 1 ms (minimum demand) to ~10 ms (maximum). That's roughly 12 load steps per second, every second the bed is regulating.
+The Kobra X's heated bed is a **1000 W mains-voltage silicone pad** controlled by the mainboard via a triac driver. To deliver fractional power smoothly, the firmware uses **proportional pulse-width firing**: short trigger pulses every ~80 ms, with pulse widths ranging from 1 ms (minimum demand) to ~80 ms (100% duty cycle). That's roughly 12 load steps per second, every second the bed is regulating.
 
 This is fine when the upstream supply is stiff. But every one of those pulses is a 1000 W load step — repeatedly stressing the PSU's input rectifier and bulk caps, the triac, and whatever sits upstream of the printer (UPS, inverter, generator, weak grid leg). On a battery-backed PV inverter in particular, the regulation loop visibly struggles to keep up with each pulse, distorting the AC waveform 12 times per second.
 
