@@ -14,7 +14,7 @@ The Kobra X uses a **1000 W mains-voltage silicone heated bed** controlled by th
 
 This works fine on grid power. But on battery mode, every pulse causes a brief AC waveform distortion as the inverter's regulation loop responds to the load step. Each distortion event is a brief brightness blip in cheap LED drivers — repeated 12 times per second, this creates visible flicker.
 
-![AC waveform distortion when bed turns on](images/ac-distortion-with-bed.png)
+![AC waveform distortion when bed turns on](images/ac-distortion-with-bed.jpg)
 *The AC waveform becomes visibly "pointier" when the bed switches on (4th half-cycle in the trace). Each pulse from the bed causes a similar brief distortion.*
 
 ## The solution
@@ -66,7 +66,7 @@ GND | ADC | 5V | IO | ZERO
 - **IO**: bed heat control signal from mainboard → triac driver. **This is what we intercept.**
 - **ZERO**: zero-crossing detection signal → mainboard. Don't touch.
 
-![Kobra X PSU board with the 5-pin connector visible](images/psu-board-closeup.png)
+![Kobra X PSU board with the 5-pin connector visible](images/psu-board-closeup.jpg)
 *The PSU board (TDX-026). The white 5-pin connector at top-left carries the GND/ADC/5V/IO/ZERO wires from the mainboard.*
 
 ### Wiring diagram
@@ -104,10 +104,10 @@ The Kobra X's bed control signal observed on a scope:
 | Approach | Close to setpoint (5–15°C error) | Wide pulses, ~10 ms each, every 80 ms |
 | Steady state | At setpoint (<5°C error) | Narrow pulses, 1–2 ms each, every 80 ms |
 
-![Narrow pulses during steady-state hold](images/io-signal-narrow-pulses.png)
+![Narrow pulses during steady-state hold](images/io-signal-narrow-pulses.jpg)
 *Steady-state hold: brief 1–2 ms triggers every ~80 ms deliver about 12% bed power. Each pulse causes a brief AC distortion event → continuous LED flicker.*
 
-![Wide pulses during approach to setpoint](images/io-signal-wide-pulses.png)
+![Wide pulses during approach to setpoint](images/io-signal-wide-pulses.jpg)
 *Approach phase: wider 8–10 ms pulses for higher power delivery. Still at the 80 ms repetition rate.*
 
 ### What the interceptor does
